@@ -1,0 +1,398 @@
+@keyframes moveDown{
+    from{top: 0%; left: 50%; transform: translate(-50%, 0%);}
+    to{top: 50%; left: 50%; transform: translate(-50%, -50%);}
+}
+
+@keyframes divSwell{
+    from{width: 46%;}
+    to{width: 49%;}
+}
+
+@keyframes divShrink{
+    to{width: 46%;}
+    from{width: 49%;}
+}
+
+@keyframes buttonSwell {
+    from{width: 10vw;
+        height: 4vw;}
+    to{width: 12vw; height: 6vw;}
+}
+
+@keyframes buttonShrink {
+    to{width: 10vw;
+        height: 4vw;}
+    from{width: 12vw; height: 6vw;}
+}
+
+@keyframes leaderboardAccSwell{
+    from{width: 70%; height: 2.7vw;}
+    to{width: 72%; height: 4.7vw;}
+}
+
+@keyframes leaderboardAccShrink{
+    to{width: 70%; height: 2.7vw;}
+    from{width: 72%; height: 4.7vw;}
+}
+
+@keyframes changeStyleSwell{
+    to{width: 3vw;height: 3vw;}
+    from{width: 2.5vw; height: 2.5vw;}
+}
+
+@keyframes changeStyleShrink{
+    from{width: 3vw;height: 3vw;}
+    to{width: 2.5vw; height: 2.5vw;}
+}
+
+@keyframes replayBtnSwell{
+    from{width: 20vw; height: 5vw;}
+    to{width: 25vw;
+        height: 7vw;}
+}
+
+@keyframes replayBtnShrink{
+    to{width: 20vw; height: 5vw;}
+    from{width: 25vw;
+        height: 7vw;}
+}
+
+@keyframes toClassifySwell{
+    from{width: 30%;}
+    to{width: 32%}
+}
+
+@keyframes toClassifyShrink{
+    to{width: 30%;}
+    from{width: 32%}
+}
+
+@keyframes typeHolderSwell {
+    from{
+        width: 300px; height: 225px;
+    }
+    to{width: 310px;
+        height: 235px;}
+}
+
+@keyframes typeHolderShrink {
+    to{
+        width: 300px; height: 225px;
+    }
+    from{width: 310px;
+        height: 235px;}
+}
+
+body{
+    background-color: rgb(34, 34, 34);
+}
+
+.flexbox{
+    display: flex;
+    justify-content: space-around;
+}
+
+.innerflexbox{
+    width: 46%;
+    background-color: rgb(23, 23, 23);
+    box-sizing: border-box;
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.leaderboardAcc{
+    width: 70%;
+    height: 2.7vw;
+    font-size: 1.5vw;
+}
+
+.leaderboardAcc:hover{
+    width: 72%;
+    height: 4.7vw;
+    animation: leaderboardAccSwell;
+    animation-duration: 0.5s;
+}
+
+.leaderboardAcc:not(:hover){
+    width: 70%;
+    height: 2.7vw;
+    animation: leaderboardAccShrink;
+    animation-duration: 0.5s;
+}
+
+h2{
+    color: white;
+}
+
+.innerflexbox:hover{
+    width: 49%;
+    animation: divSwell;
+    animation-duration: 0.5s;
+}
+
+.innerflexbox:not(:hover){
+    width: 46%;
+    animation: divShrink;
+    animation-duration: 0.5s;
+}
+
+.changeStyle{
+    display: block;
+    margin: auto;
+    width: 2.5vw;
+    height: 2.5vw;
+    font-size: 1.5vw;
+    text-align: center;
+    position: absolute;
+}
+
+.changeStyle:hover{
+    width: 3vw;
+    height: 3vw;
+    animation: changeStyleSwell;
+    animation-duration: 0.5s;
+}
+
+.changeStyle:not(:hover){
+    width: 2.5vw;
+    height: 2.5vw;
+    animation: changeStyleShrink;
+    animation-duration: 0.5s;
+}
+
+input{
+    width: 50%;
+}
+
+
+.createAcc{
+    display: none;
+}
+
+.title{
+    font-size: 50px;
+}
+
+.loginDiv{
+    visibility: hidden;
+    background-color: rgb(38, 38, 38);
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.loginTitle{
+    text-align: center;
+}
+
+.gameHolder{
+    display: none;
+}
+
+
+.gameBody{
+    height: 60%;
+}
+
+.toClassify{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: rgb(92, 92, 92);
+    text-align: center;
+    animation: moveDown;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 5;
+    animation-play-state: paused;
+}
+
+.toClassify:hover{
+    width: 32%;
+    animation: toClassifySwell;
+    animation-duration: 0.5s;
+}
+
+.toClassify:not(:hover){
+    width: 30%;
+    animation: toClassifyShrink;
+    animation-duration: 0.5s;
+}
+
+img{
+    display: none;
+    margin: auto;
+    user-select: none;
+}
+
+.display{
+    user-select: none;
+    font-family: "DM Serif Text", serif;
+}
+
+.gameOver{
+    display: none;
+    text-align: center;
+}
+
+.gameOverInfo{
+    font-size: 50px;
+}
+
+.replayBtn{
+    width: 20vw;
+    height: 5vw;
+}
+
+.replayBtn:hover{
+    width: 25vw;
+    height: 7vw;
+    animation: replayBtnSwell;
+    animation-duration: 0.5s;
+}
+
+.replayBtn:not(:hover){
+    width: 20vw;
+    height: 5vw;
+    animation: replayBtnShrink;
+    animation-duration: 0.5s;
+}
+
+h3{
+    color: white;
+    font-family: "Newsreader", serif;
+    font-size: 2vw;
+}
+
+.gameOverText{
+    font-size: 200px;
+}
+
+.typeHolder{
+    background-color: rgb(11, 11, 11);
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    width: 300px;
+    height: 225px;
+}
+
+.typeHolder:hover{
+    width: 310px;
+    height: 235px;
+    animation: typeHolderSwell;
+    animation-duration: 0.5s;
+}
+
+.typeHolder:not(:hover){
+    width: 300px;
+    height: 225px;
+    animation: typeHolderShrink;
+    animation-duration: 0.5s;
+}
+
+.elementHolder{
+    position: absolute;
+    top: 120px;
+    left: 20px;
+
+}
+
+.compoundHolder{
+    position: absolute;
+    top: 120px;
+    right: 20px;
+}
+
+.heteroHolder{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.headerContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+}
+
+.flexText{
+    width: 30%;
+    text-align: center;
+}
+
+.homoHolder{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+h1{
+    color: white;
+    text-decoration: underline;
+    font-family: "Jersey 15", serif;
+    text-align: center;
+}
+
+li{
+    color: white;
+    font-family: "DM Serif Text", serif;
+    font-size: 1.5vw;
+}
+
+p{
+    color: white;
+    font-size: 1.5vw;
+    font-family: "DM Serif Text", serif;
+}
+
+button{
+    background-color: rgb(77, 77, 77);
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    width: 10vw;
+    height: 4vw;
+    font-size: 1.5vw;
+    font-family: "Newsreader", serif;
+}
+
+button:hover{
+    background-color: rgb(29, 29, 29);
+    width: 12vw;
+    height: 6vw;
+    animation: buttonSwell;
+    animation-duration: 0.5s;
+}
+
+button:not(:hover){
+    background-color: rgb(77, 77, 77);
+    width: 10vw;
+    height: 5vw;
+    animation: buttonShrink;
+    animation-duration: 0.5s;
+}
+
+label{
+    color: white;
+}
+
+@media only screen and (max-height: 600px) {
+    .typeHolder{
+        width: 20vw;
+        height: 18vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .typeHolder{
+        width: 40vw;
+        height: 40vw;
+    }
+}

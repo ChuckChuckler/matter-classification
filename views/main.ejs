@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifying Matter</title>
+    <link id="styleId" href="darkMode.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Jersey+15&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="changeStyle" class="changeStyle" onclick="changeStyle()">☀</button>
+    <div class="setup" id="setup">
+        <h1 class="title">Classifying Matter</h1>
+        <div class="flexbox">
+            <div class="innerflexbox difficultyBox">
+                <h1>Difficulty</h1>
+                <button onclick="setTime(15, 1)">Easy</button>
+                <p>15 seconds per substance | 1 point per correct classification</p>
+                <button onclick="setTime(8, 2)">Medium</button>
+                <p>8 seconds per substance | 2 point per correct classification</p>
+                <button onclick="setTime(3, 3)">Hard</button>
+                <p>3 seconds per substance | 3 point per correct classification</p>
+            </div>
+            <div class="innerflexbox">
+                <h1>Leaderboard</h1>
+                <ol id="leaderboard">
+                    <li id="first">1. </li>
+                    <li id="second">2. </li>
+                    <li id="third">3. </li>
+                    <li id="fourth">4. </li>
+                    <li id="fifth">5. </li>
+                </ol>
+                <button class="leaderboardAcc" onclick="leaderboardAcc()">Want to be on the leaderboard? Click here!</button>
+                <br>
+                <br>
+                <div id="loginDiv" class="loginDiv">
+                    <h2 class="loginTitle">Classifying Matter-- Leaderboard Signup/Login</h2>
+                    <label for="username">Username</label>
+                    <br>
+                    <input type="text" name="username" id="username" autocomplete="off">
+                    <br>
+                    <br>
+                    <label for="password">Password (it can be as simple as 1234!)</label>
+                    <br>
+                    <input type="text" name="password" id="password" autocomplete="off">
+                    <br>
+                    <br>
+                    <br>
+                    <button onclick="loginSignup()">Leaderboard login/signup</button>
+                    <br>
+                    <p id="loginInfo"></p>
+                    <br>
+                    <button onclick="createAcc()" id="createAcc" class="createAcc">Create Account!</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="gameHolder" id="gameHolder">
+        <div class="headerContainer">
+            <div class="flexText">
+                <h3 id="currentScore"></h3>
+            </div>
+            <div class="flexText">
+                <h3 id="time"></h3>
+            </div>
+            <div class="flexText">
+                <h3 id="highScore"></h3>
+            </div>
+        </div>
+        <div class="gameBody">
+            <div class="toClassify" id="toClassify">
+                <h1 id="display" class="display"></h1>
+                <img draggable="false" id="diagram" height="200" width="200">
+            </div>
+            <br>
+    
+            <div class="typeHolder elementHolder" id="elementHolder">
+                <h1>Element</h1>
+            </div>
+            
+            <div class="typeHolder heteroHolder" id="heteroHolder">
+                <h1>Heterogeneous Mixture</h1>
+            </div>
+    
+            <div class="typeHolder compoundHolder"id="compoundHolder">
+                <h1>Compound</h1>
+            </div>
+    
+            <div class="typeHolder homoHolder" id="homoHolder">
+                <h1>Homogeneous Mixture</h1>
+            </div>
+        </div>
+    </div>
+    <div class="gameOver" id="gameOver">
+        <h1 class="gameOverText">GAME OVER</h1>
+        <h3 class="gameOverInfo" id="gameoverInfo"></h3>
+        <button class="replayBtn" onclick="replay()">Play Again</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function(){
+            leaderboardSetup();
+        }
+    </script>
+</body>
+</html>
